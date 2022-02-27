@@ -1,8 +1,7 @@
-package com.promineotech.jeep.entity;
+package com.promineotech.jeep.Entity;
 
 import java.util.List;
 
-import com.promineotech.jeep.entity.JeepModel;
 import lombok.Data;
 
 @Data

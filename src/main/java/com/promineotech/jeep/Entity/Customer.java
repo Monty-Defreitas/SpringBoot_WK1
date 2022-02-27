@@ -1,4 +1,4 @@
-package com.promineotech.jeep.entity;
+package com.promineotech.jeep.Entity;
 
 import lombok.Builder;
 import lombok.Data;

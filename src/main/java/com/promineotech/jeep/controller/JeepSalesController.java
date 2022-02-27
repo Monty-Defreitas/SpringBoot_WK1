@@ -1,7 +1,7 @@
 package com.promineotech.jeep.controller;
 
-import com.promineotech.jeep.entity.Jeep;
-import com.promineotech.jeep.entity.JeepModel;
+import com.promineotech.jeep.Entity.Jeep;
+import com.promineotech.jeep.Entity.JeepModel;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -11,14 +11,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/Jeeps")
+@RequestMapping("/jeeps")
 @OpenAPIDefinition(info = @Info(title = "Jeep Sales Service"), servers = {@Server(url = "http://localhost:8080", description = "Local Server.")})
 public interface JeepSalesController {
 
@@ -47,13 +44,11 @@ public interface JeepSalesController {
                             description = "The model name (i.e. 'Wrangler')"),
                     @Parameter(name = "trim", allowEmptyValue = false,
                             required = false,
-                            description = " The trim level (i.e. 'Sport')")
-            }
-    )
+                            description = " The trim level (i.e. 'Sport')")})
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
-    List<Jeep> fetchJeeps(@RequestParam JeepModel model,
+    List<Jeep> fetchJeeps( @RequestParam JeepModel model,
                           @RequestParam String trim);
 
 }
