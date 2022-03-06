@@ -10,6 +10,8 @@ public class BaseTest {
     @LocalServerPort
     private int serverPort;
 
+
+
     @Getter //Lombok annotation
     @Autowired
     private TestRestTemplate restTemplate;
@@ -24,4 +26,7 @@ public class BaseTest {
         return String.format("http://localhost:%d/jeeps", serverPort);
     }
 
+    protected TestRestTemplate getRestTemplate() {
+        return restTemplate;
+    }
 }
